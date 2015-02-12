@@ -1,0 +1,176 @@
+﻿*
+{
+    margin: 0px;
+    padding: 0px;
+}
+h1
+{
+    font: bold 20px Tahoma;
+    color:Maroon;
+}
+h2
+{
+    font: bold 14px Sans-serif;
+}
+body
+{
+    text-align: center;
+}
+#page
+{
+    background-color: #CCCCCC;
+    border: 1px solid black;
+    width: 1000px;
+    margin: 20px auto;
+    text-align: left;
+}
+
+#title
+{
+    float: left;
+    width: 660px;
+    background: #CCCCCC;
+    padding: 20px;
+    height: 20px;
+}
+#logindisplay
+{
+    float: left;
+    background: #CCCCCC;
+    width: 220px;
+    padding: 30px;
+    font: bold 12px Tahoma;
+    text-align: center;
+    height: 20px;
+}
+#menucontainer
+{
+    clear: both;
+    background: #EEEEEE;
+    text-align: left;
+}
+#menucontainer li
+{
+    display: inline-block;
+    list-style: none;
+    padding: 5px;
+}
+#main1
+{
+    float: left;
+    width: 160px;
+    padding: 20px;
+    background-color:Gray;
+    margin-top: 30px;
+}
+#main2
+{
+    float: left;
+    width: 760px;
+    padding: 20px;
+    background-color: White;
+    margin-top: 30px;
+}
+#footer
+{
+    clear: both;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid blue;
+}
+ul#menu li a:hover
+{
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active
+{
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a
+{
+    background-color: #fff;
+    color: #000;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+/*...............................*/
+a:link
+{
+    color: #034af3;
+    text-decoration: underline;
+}
+a:visited
+{
+    color: #505abc;
+}
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+a:active
+{
+    color: #12eb87;
+}
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea
+{
+    min-height: 75px;
+}
+
+input[type="text"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}
+
+input[type="password"]
+{
+    width: 200px;
+    border: 1px solid #CCC;
+}

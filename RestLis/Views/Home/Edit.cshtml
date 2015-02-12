@@ -1,0 +1,70 @@
+﻿@model RestLis.Models.Restaurant_info
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>Restaurant_info</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_name)
+            @Html.EditorFor(model => model.res_name)
+            @Html.ValidationMessageFor(model => model.res_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_address)
+            @Html.EditorFor(model => model.res_address)
+            @Html.ValidationMessageFor(model => model.res_address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_phone)
+            @Html.EditorFor(model => model.res_phone)
+            @Html.ValidationMessageFor(model => model.res_phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_catagory)
+            @Html.EditorFor(model => model.res_catagory)
+            @Html.ValidationMessageFor(model => model.res_catagory)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_area)
+            @Html.EditorFor(model => model.res_area)
+            @Html.ValidationMessageFor(model => model.res_area)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_website)
+            @Html.EditorFor(model => model.res_website)
+            @Html.ValidationMessageFor(model => model.res_website)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.res_picurl)
+            @Html.EditorFor(model => model.res_picurl)
+            @Html.ValidationMessageFor(model => model.res_picurl)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

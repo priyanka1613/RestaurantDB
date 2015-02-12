@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "RestLis";
+}
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+<h2>
+    <a style="font: bold 14px Tahoma; color: Maroon">RestLis.com</a> är den största
+    restaurangen databasen i sverige. Du kan se restaurang information och bestämma
+    vilka en du gillar mest att ha din måltid. Du kan lägga din värdefulla kommentar
+    på vår kommentar sida och se de tidigare recensionerna.<br />
+    <br />
+</h2>
+<h2>
+    <a style="font: bold 14px Tahoma; color: Maroon">RestLis.com</a> is the biggest
+    restaurant database in sweden. You can see restaurant informations and decide which
+    one you like most to have your meal. You can add your valuable comment in our comment
+    page and see the previous reviews.</h2>

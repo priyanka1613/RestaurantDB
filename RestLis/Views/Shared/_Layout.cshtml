@@ -1,0 +1,60 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("../../Content/Res_info.css")"rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    <div id="page">
+        <div id="title">
+            <h1>
+                RestLis</h1>
+            <p style="font: italic 12px Tahoma; color: Red">
+                Största svenska restaurang Databas...</p>
+        </div>
+        <div id="logindisplay">
+            <a>@Html.Partial("_LogOnPartial")</a>
+        </div>
+        <div id="menucontainer">
+            <ul id="menu">
+                <li>@Html.ActionLink("Hem", "Index", "Home")</li>
+                <li>@Html.ActionLink("Om Oss", "About", "Home")</li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink("Publicera din restaurang", "Create", "Home")</li> 
+                }
+                @if (User.IsInRole("Admin")) { 
+                <li><a href="https://m07.internetmailserver.net/Login.aspx">Webmail</a></li>
+                }
+            </ul>
+        </div>
+        <div id="main1">
+            <p style="font: 14px Sans-serif">
+                <a style="font: bold 14px Sans-serif; color: Maroon">RestLis.com</a>
+                    är den största restaurangen databasen i sverige. Du kan se restaurang information
+                    och bestämma vilka en du gillar mest att ha din måltid. Du kan lägga din värdefulla
+                    kommentar på vår kommentar sida och se de tidigare recensionerna.</p>
+            <br />
+            <br />
+            <p style="font: 14px Sans-serif">
+                Vänligen registrera dig och ladda upp din restaurang profil själv i vår databas.
+                Det är gratis och lätt att använda ....
+            </p>
+            @RenderSection("news1", false)
+        </div>
+        <div id="main2">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            <a style="font: bold 12px Tahoma; color:Blue">Contakta Oss:"RestLis.com", Röntgenvägen 1, lgh: 2318, 14152 Huddinge, Sverige</a><br />
+            <a style="font: bold 12px Tahoma; color:Blue">E-post: info@@restlis.com, Ring: 0704788129</a><br />
+            <p style="font: 12px Tahoma; color:Maroon; float:right">Webbdesign och utvecklat av: arif1613@yahoo.com</p>
+        </div>
+    </div>
+</body>
+</html>

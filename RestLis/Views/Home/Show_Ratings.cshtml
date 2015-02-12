@@ -1,0 +1,18 @@
+﻿@model IEnumerable<RestLis.Models.res_rating>
+@foreach (var item in Model)
+{
+    
+    <div id="res_main" style="width: 760px; height: 100px; background-color: #AAAAAA">
+        <p style="font: bold 12px Tahoma; color: Blue">@String.Format("{0} skrev i :{1} och nominellt :{2:F}", item.cus_name, item.date, item.ratings)</p>
+        <br />
+        <p>@item.comment</p>
+        <ul>
+            <li style="list-style: none; display: inline-block; font: 12px Tahoma">
+                @Html.ActionLink("Visa information om restaurangen", "Details", new { id = item.ID })
+            </li>
+                                 
+        </ul>
+        <br />
+    </div>
+    <br />
+}

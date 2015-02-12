@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RestLis.Models.Restaurant_info>
+@{
+    ViewBag.Title = "RestLis";
+}
+<h2>
+    Här får du veta restauranger i Sverige......</h2>
+@if (User.IsInRole("Admin"))
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+@using (Html.BeginForm("Index_search", "Home"))
+{
+    <a style="font: bold 14px Tahoma; color: Red">Välj plats att söka:</a> @Html.DropDownList("search_location", new SelectList(ViewBag.search_location), "")
+    <a style="font: bold 14px Tahoma; color: Red">Välj kategorin du vill söka:</a> @Html.DropDownList("search_catagory", new SelectList(ViewBag.search_catagory), "")<br />
+    <input name="search" type="submit" value="Sök" /><br />
+    <br />
+}
+@foreach (var item in Model)
+{
+    <div id="res_main">
+        <div id="col1">
+            <p style="font: bold 22px Tahoma; color: Maroon">@item.res_name</p>
+            <br />
+            <p>
+                <a style="font: bold 14px Sans-serif; color: #11AAAA">Address:</a>@item.res_address</p>
+            <p>
+                <a style="font: bold 14px Sans-serif; color: #FFFFFF">Address:</a>@item.res_area</p>
+            <p>
+                <a style="font: bold 14px Sans-serif; color: #11AAAA">Phone:</a>@item.res_phone</p>
+            <p>
+                <a style="font: bold 14px Sans-serif; color: #11AAAA">Catagory: </a>@item.res_catagory</p>
+            <br />
+            <ul>
+                <li style="list-style: none; font: 12px Tahoma"><a href="http://@item.res_website">View
+                    Website</a></li>
+                <li style="list-style: none; font: 12px Tahoma">
+                    @Html.ActionLink("Rate this Restaurant", "rating_Create", new { id = @item.ID })</li>
+            </ul>
+        </div>
+        <div id="col2">
+            <img src="@item.res_picurl"; height="150";alt="null" />
+            @if (User.IsInRole("Admin"))
+            { 
+                <ul>
+                    <li style="list-style: none; display: inline-block; font: 12px Tahoma">
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+                        |</li>
+                    <li style="list-style: none; display: inline-block; font: 12px Tahoma">
+                        @Html.ActionLink("Details", "Details", new { id = item.ID })
+                        |</li>
+                    <li style="list-style: none; display: inline-block; font: 12px Tahoma">
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })</li>
+                </ul>
+            }
+        </div>
+    </div>
+}
+<div id="pagging">
+    @using (Html.BeginForm("Index", "Home"))
+    {
+        for (int p = 1; p <= @ViewBag.res_count; p++)
+        {   
+        <input name="x" type="submit" value="@p" style="font:bold 14px Tahoma"/>
+        }
+    }
+    You are at page: <a style="font: bold 14px Tahoma; color: Red">@ViewBag.page_number</a>
+</div>

@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Web Developer Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestLis", "RestLis\RestLis.csproj", "{A60AB434-3FD4-43F7-93D7-B26011435D74}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A60AB434-3FD4-43F7-93D7-B26011435D74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60AB434-3FD4-43F7-93D7-B26011435D74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60AB434-3FD4-43F7-93D7-B26011435D74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60AB434-3FD4-43F7-93D7-B26011435D74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

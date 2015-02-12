@@ -1,0 +1,41 @@
+﻿@model RestLis.Models.Restaurant_info
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Restaurant_info</legend>
+
+    <div class="display-label">res_name</div>
+    <div class="display-field">@Model.res_name</div>
+
+    <div class="display-label">res_address</div>
+    <div class="display-field">@Model.res_address</div>
+
+    <div class="display-label">res_phone</div>
+    <div class="display-field">@Model.res_phone</div>
+
+    <div class="display-label">res_catagory</div>
+    <div class="display-field">@Model.res_catagory</div>
+
+    <div class="display-label">res_area</div>
+    <div class="display-field">@Model.res_area</div>
+
+    <div class="display-label">res_website</div>
+    <div class="display-field">@Model.res_website</div>
+
+    <div class="display-label">res_picurl</div>
+    <div class="display-field">@Model.res_picurl</div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+
+

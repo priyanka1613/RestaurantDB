@@ -1,0 +1,28 @@
+﻿@model RestLis.Models.Restaurant_info
+
+<fieldset>
+    <legend>Restaurant_info</legend>
+
+    <div class="display-label">Name:
+    @Model.res_name</div>
+
+    <div class="display-label">Address:
+    @Model.res_address<br />
+    @Model.res_area</div>
+
+    <div class="display-label">Phone:
+    @Model.res_phone</div>
+
+    <div class="display-label">Catagory:
+    @Model.res_catagory</div>
+
+
+    <div class="display-label">Website:@Model.res_website</div>
+
+    <div class="display-label">res_picurl:@Model.res_picurl</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

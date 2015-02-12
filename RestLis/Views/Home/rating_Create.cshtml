@@ -1,0 +1,52 @@
+﻿@model RestLis.Models.res_rating
+<script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+@using (Html.BeginForm("rating_Create", "Home", new { id = @ViewBag.r_name }))
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend><a style="font: bold 22px Tahoma; color: Maroon">@ViewBag.r_name</a></legend>
+        Ström: <a style="font: bold 14px Tahoma; color: Orange">@string.Format("{0:F}", @ViewBag.avg_rating)
+            / 10</a>
+        <div class="editor-label" style="font: 12px Sans-serif">
+            @Html.LabelFor(model => model.cus_name)
+            @Html.EditorFor(model => model.cus_name)
+            @Html.LabelFor(model => model.ratings)
+            @Html.DropDownList("li", new SelectList(@ViewBag.li))
+        </div>
+        <div class="editor-field">
+            @Html.ValidationMessageFor(model => model.cus_name)
+            @Html.ValidationMessageFor(model => model.ratings)
+        </div>
+        <br />
+        <div class="editor-label" style="font: 12px Sans-serif">
+            @Html.LabelFor(model => model.comment)
+        </div>
+        <div class="editor-field" style="font: 12px Sans-serif">
+            @Html.EditorFor(model => model.comment)
+            @Html.ValidationMessageFor(model => model.comment)
+        </div>
+        <ul>
+            <li style="list-style: none; display: inline-block; font: 12px Tahoma">
+                <input type="submit" value="Rate This" style="font: 12px Sans-serif" />
+            </li>
+            <li style="list-style: none; display: inline-block; font: 12px Tahoma">
+                @Html.ActionLink("Cancel", "Index")
+            </li>
+        </ul>
+    </fieldset>
+}
+<div id="Show_rating" style="width: 760px">
+    Totalt @ViewBag.Rating_Count betyg hittades för denna restaurang
+    @Ajax.ActionLink("Visa tidigare betyg", "Show_Ratings", new { id = @ViewBag.r_name }, new AjaxOptions
+{
+    UpdateTargetId = "Show_rating",
+    InsertionMode = InsertionMode.Replace,
+    LoadingElementId = "load",
+    HttpMethod = "GET"
+})
+    <div id="load" style="display: none">
+        <img src="../../Content/Images/ajax-loader.gif" alt="null" />
+    </div>
+</div>
